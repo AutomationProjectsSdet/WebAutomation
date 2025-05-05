@@ -1,0 +1,27 @@
+
+e
+java:S1192/"JDefine a constant instead of duplicating this literal "innerText" 5 times.(ıï„øÿÿÿÿ
+T
+java:S1854 "9Remove this useless assignment to local variable "alert".(Îı¾ëøÿÿÿÿ
+E
+java:S1481 "*Remove this unused "alert" local variable.(Îı¾ëøÿÿÿÿ
+@	java:S106#"+Replace this use of System.out by a logger.(×
+@	java:S106."+Replace this use of System.out by a logger.(¢‹Ğ‚
+\
+java:S1126/"AReplace this if-then-else statement by a single return statement.(ıï„øÿÿÿÿ
+@	java:S106C"+Replace this use of System.out by a logger.(ÌùËã
+E	java:S106F"+Replace this use of System.out by a logger.(˜ë×éúÿÿÿÿ
+@	java:S106K"+Replace this use of System.out by a logger.(ØÅŸ
+y
+java:S2142N"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(®ûºöÿÿÿÿÿ
+C	java:S108N")Either remove or fill this block of code.(®ûºöÿÿÿÿÿ
+E	java:S106Q"+Replace this use of System.out by a logger.(¸ÜÄ²ÿÿÿÿÿ
+@	java:S106a"+Replace this use of System.out by a logger.(Æ¥Ç
+@	java:S106f"+Replace this use of System.out by a logger.(¸Šúæ
+E	java:S106l"+Replace this use of System.out by a logger.(—ÒÁşÿÿÿÿ
+y
+java:S2142o"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(®ûºöÿÿÿÿÿ
+C	java:S108o")Either remove or fill this block of code.(®ûºöÿÿÿÿÿ
+@	java:S106s"+Replace this use of System.out by a logger.(şöÁï
+b
+java:S1128"ERemove this unused import 'org.openqa.selenium.interactions.Actions'.(ÅÑÃ8Õ—ûÛç2

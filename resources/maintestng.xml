@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RegressionSuite" thread-count="6" parallel="classes" data-provider-thread-count="6">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+        <listener class-name="com.bkt.smarti.utilities.TestExecutionListener"></listener>
+    </listeners>
+
+    <!--IPrint Module-->
+    <test name="iPrint">
+        <classes>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintCifTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintSearchTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintDepositContractTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintSelfDeclarationCRSTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintAccountConfirmationTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iprintCurrentAccountTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintAccountDepositBalanceTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintDepositGreenCardTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintSavingAccountReportTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintWithdrawRequestTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintJointAccountTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintDepositMyChildTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintAMFDepositTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintCardStatementTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintStatementAuditsProceduresTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintStatementAuditsPersonalTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintDepositAgreementOpenTextTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.iPrintCloseDepositOpenTextTest"></class>
+            <class name="com.bkt.smarti.testcases.iprint.negativetestcases.iPrintSearchWrongCifTest"></class>
+        </classes>
+    </test>
+    <test name="ForexUpload">
+        <classes>
+            <class name="com.bkt.smarti.testcases.treasury.ForexRateTest"></class>
+        </classes>
+    </test>
+    <!--Bills Module-->
+    <test name="Bills">
+        <classes>
+
+            <class name="com.bkt.smarti.testcases.bills.BillsUktPayment"></class>
+            <class name="com.bkt.smarti.testcases.bills.BillsNoaFinancialPayment"></class>
+            <class name="com.bkt.smarti.testcases.bills.negativetestcases.BillsNoaPaymentNoBalanceAccountTest"></class>
+            <class name="com.bkt.smarti.testcases.bills.negativetestcases.NoBillsToPayTest"></class>
+            <class name="com.bkt.smarti.testcases.bills.negativetestcases.PaidBillOnListTest"></class>
+            <class name="com.bkt.smarti.testcases.bills.BillsNoaFinancialPaymentWithOVD"></class>
+        </classes>
+    </test>
+    <test name="Transfers Between Account">
+
+        <classes>
+
+
+
+            <class name="com.bkt.smarti.testcases.transfers.negativecases.TrnBetweenAccountsNoBalanceAccount"></class>
+            <class name="com.bkt.smarti.testcases.transfers.negativecases.DoubleExecutionCaseBetweenAccsTrn"></class>
+            <class name="com.bkt.smarti.testcases.transfers.betweenaccount.retail.TrnBetweenAccountsRetailWithOtp"></class>
+            <class name="com.bkt.smarti.testcases.transfers.betweenaccount.retail.TrnBetweenAccountsRetail"></class>
+            <class name="com.bkt.smarti.testcases.transfers.betweenaccount.retail.TrnBetweenAccountsRetailOVD"></class>
+            <class name="com.bkt.smarti.testcases.transfers.betweenaccount.retail.TrnBetweenAccountsMinAmountNotSentForApproval"></class>
+            <class name="com.bkt.smarti.testcases.transfers.betweenaccount.bussiness.TrnBeetwenAccountsBusinessOVD"></class>
+            <class name="com.bkt.smarti.testcases.transfers.betweenaccount.bussiness.TrnBetweenAccountsBusiness"></class>
+
+
+        </classes>
+    </test>
+
+    <!--Deposits Module-->
+    <test name="Deposits">
+        <classes>
+            <class name="com.bkt.smarti.testcases.deposits.CloseExistingDeposit"></class>
+            <class name="com.bkt.smarti.testcases.deposits.NewDepositOVDAccount"></class>
+            <class name="com.bkt.smarti.testcases.deposits.NewDepositProductsList"></class>
+            <class name="com.bkt.smarti.testcases.deposits.NewElasticDeposit"></class>
+            <class name="com.bkt.smarti.testcases.deposits.OpenDepositUploadInOpenText"></class>
+
+            <class name="com.bkt.smarti.testcases.deposits.negativecases.NewDepositNoBalanceAccount"></class>
+            <class name="com.bkt.smarti.testcases.deposits.negativecases.NewDepositNotAllowedAmount"></class>
+            <class name="com.bkt.smarti.testcases.deposits.negativecases.NewElasticDepositNoProductForMaturityDate"></class>
+        </classes>
+    </test>
+
+
+    <!--Exchange Module-->
+
+
+    <test name="Exchange">
+        <groups>
+            <dependencies>
+
+                <group name="ApprovePendingPreferentialRateTransaction" depends-on="SendToTreasuryDepartmentPreferentialRateTest"></group>
+                <group name="ApprovePreferentialRateTransaction" depends-on="ApprovePendingPreferentialRateTransaction"></group>
+
+            </dependencies>
+
+        </groups>
+        <classes>
+
+            <class name="com.bkt.smarti.testcases.exchange.BuyForeignCurrency"></class>
+            <class name="com.bkt.smarti.testcases.exchange.SellForeignCurrency"></class>
+            <class name="com.bkt.smarti.testcases.exchange.CrossExchange"></class>
+            <class name="com.bkt.smarti.testcases.exchange.BuyExchangeApproveWithOTP"></class>
+            <class name="com.bkt.smarti.testcases.exchange.SellExchangeApproveWithOTP"></class>
+
+
+            <class name="com.bkt.smarti.testcases.exchange.SendToTreasuryDepartmentPreferentialRateTest"></class>
+            <class name="com.bkt.smarti.testcases.exchange.ApprovePendingPreferentialRateTransaction"></class>
+            <class name="com.bkt.smarti.testcases.exchange.ApprovePreferentialRateTransaction"></class>
+
+            <class name="com.bkt.smarti.testcases.exchange.NewExchangeSellAccountWithOVDTest"></class>
+
+
+            <class name="com.bkt.smarti.testcases.exchange.negativecases.SecondUserChangeApprovedExchangeLimitTest"></class>
+            <class name="com.bkt.smarti.testcases.exchange.negativecases.MinAmountForPreferentialRateRequestTest"></class>
+            <class name="com.bkt.smarti.testcases.exchange.negativecases.NewExchangeAccountNoBalanceTest"></class>
+            <class name="com.bkt.smarti.testcases.exchange.ApproveExchangeFromMobileTest"></class>
+
+        </classes>
+    </test>
+    <!--Transfers-->
+    <!--Transfers-->
+    <test name="Transfers Internal">
+
+        <classes>
+
+
+            <class name="com.bkt.smarti.testcases.transfers.internal.retail.TrnInternalRetailIBAN"></class>
+            <class name="com.bkt.smarti.testcases.transfers.internal.retail.TrnInternalRetailSSN"></class>
+            <class name="com.bkt.smarti.testcases.transfers.internal.retail.TrnInternalRetailCIF"></class>
+            <class name="com.bkt.smarti.testcases.transfers.internal.retail.TrnInternalRetailAccount"></class>
+            <class name="com.bkt.smarti.testcases.transfers.internal.retail.TrnInternalRetailOVD"></class>
+            <class name="com.bkt.smarti.testcases.transfers.internal.ApproveInternalTransferFromMobileTest"></class>
+            <class name="com.bkt.smarti.testcases.transfers.internal.business.TrnInternalBusiness"></class>
+            <class name="com.bkt.smarti.testcases.transfers.negativecases.DoubleExecutionCaseInternalTrn"></class>
+            <class name="com.bkt.smarti.testcases.transfers.internal.business.TrnInternalBusinessOVD"></class>
+            <class name="com.bkt.smarti.testcases.transfers.negativecases.TrnInternalNoBalanceAccount"></class>
+
+
+        </classes>
+    </test>
+
+    <!--BO Module-->
+    <!--BO Module-->
+
+    <test name="BackOffice">
+
+        <groups>
+            <dependencies>
+
+                <group name="AddExistingLanguageData" depends-on="AddNewLanguageDataManually"></group>
+                <group name="UpdateLanguageData" depends-on="AddExistingLanguageData"></group>
+                <group name="DeleteLanguageData" depends-on="UpdateLanguageData"></group>
+
+                <group name="AddExistingProcess" depends-on="AddNewProcess"></group>
+                <group name="EditProcess" depends-on="AddExistingProcess"></group>
+                <group name="DeleteProcess" depends-on="EditProcess"></group>
+
+                <group name="AddExistingReferenceData" depends-on="AddNewReferenceData"></group>
+                <group name="EditReferenceData" depends-on="AddExistingReferenceData"></group>
+                <group name="DeleteReferenceData" depends-on="EditReferenceData"></group>
+
+            </dependencies>
+
+
+        </groups>
+        <classes>
+
+            <class name="com.bkt.smarti.testcases.backoffice.companymanagement.CompanyManagementUpdate"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.usermanagement.UserManagementUpdate"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.usermanagement.UserManagementCreate"></class>
+
+            <class name="com.bkt.smarti.testcases.backoffice.ConfigureBackOffice"></class>
+
+            <class name="com.bkt.smarti.testcases.backoffice.userconfigurations.OtpPermissionCheck"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.userconfigurations.UserManagement"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.userconfigurations.ForgotPassword"></class>
+
+            <class name="com.bkt.smarti.testcases.backoffice.chargemanagement.AddNewChargeManagementManually"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.chargemanagement.AddNewChargeManagementWithFile"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.chargemanagement.EditChargeManagement"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.chargemanagement.DeleteChargeManagement"></class>
+
+            <class name="com.bkt.smarti.testcases.backoffice.languagedata.AddNewLanguageDataManually"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.languagedata.negativecases.AddExistingLanguageData"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.languagedata.UpdateLanguageData"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.languagedata.DeleteLanguageData"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.languagedata.AddNewLanguageDataByUploadFile"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.languagedata.negativecases.AddLanguageDataFileDublicatedRecords"></class>
+
+            <class name="com.bkt.smarti.testcases.backoffice.processmanagement.AddNewProcess"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.processmanagement.negativecases.AddExistingProcess"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.processmanagement.EditProcess"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.processmanagement.DeleteProcess"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.processmanagement.negativecases.AddProcessLongCode"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.processmanagement.processdetails.AddProcessAmountLimits"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.processmanagement.processdetails.AddProcessTimeLimits"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.processmanagement.processdetails.AddProcessQuantityLimits"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.processmanagement.processdetails.AddProcessLogDetails"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.processmanagement.processdetails.ExportProcessDetails"></class>
+
+            <class name="com.bkt.smarti.testcases.backoffice.referencedata.AddNewReferenceData"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.referencedata.negativecases.AddExistingReferenceData"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.referencedata.EditReferenceData"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.referencedata.DeleteReferenceData"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.referencedata.AddNewReferenceDataByUploadFile"></class>
+
+            <class name="com.bkt.smarti.testcases.backoffice.systemparameters.AddNewSystemParameter"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.systemparameters.negativecases.AddExistingSystemParameter"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.systemparameters.EditSystemParameter"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.systemparameters.DeleteSystemParameter"></class>
+            <class name="com.bkt.smarti.testcases.backoffice.systemparameters.AddNewSystemParameterWithFile"></class>
+
+        </classes>
+
+    </test>
+
+    <!--Education Module-->
+    <test name="Education">
+        <classes>
+            <class name="com.bkt.smarti.testcases.education.EducationPaymentTest"></class>
+            <class name="com.bkt.smarti.testcases.education.EducationSendEmailTest"></class>
+            <class name="com.bkt.smarti.testcases.education.negativetestcases.EducationPaymentNoBalanceTest"></class>
+            <class name="com.bkt.smarti.testcases.education.negativetestcases.EducationPaymentWrongAmountTest"></class>
+        </classes>
+    </test>
+
+    <!--  <test name="ATMUpload">
+          <classes>
+              <class name="com.bkt.smarti.testcases.treasury.ATMRateTest"></class>
+          </classes>
+      </test>-->
+    <!--TaxPayment Module-->
+    <test name="TaxPayment">
+        <classes>
+            <class name="com.bkt.smarti.testcases.taxpayment.TaxPaymentTestCase"></class>
+            <class name="com.bkt.smarti.testcases.taxpayment.TaxPaymentWithOVD"></class>
+            <class name="com.bkt.smarti.testcases.taxpayment.negativecases.NoBalanceAccountTaxPayment"></class>
+            <class name="com.bkt.smarti.testcases.taxpayment.negativecases.WrongSerialNumberTestCase"></class>
+        </classes>
+    </test>
+
+    <!--Approvals Module  -->
+    <test name="Approvals">
+        <groups>
+            <dependencies>
+                <group name="ProcessApprovalListEdit" depends-on="ProcessApprovalAddNewConfig"></group>
+                <group name="ProcessApprovalListDeleteTest3" depends-on="ProcessApprovalListEdit"></group>
+                <group name="ApproversRoleBasedEditTest" depends-on="ApproversRoleBasedAddNewConfigTest"></group>
+                <group name="ApproversRoleBasedDeleteTest3" depends-on="ApproversRoleBasedEditTest"></group>
+                <group name="ApproversUserBasedEditTest" depends-on="ApproversUserBasedAddNewConfigTest"></group>
+                <group name="ApproversUserBasedDeleteTest3" depends-on="ApproversUserBasedEditTest"></group>
+
+            </dependencies>
+
+        </groups>
+
+        <classes>
+            <class name="com.bkt.smarti.testcases.approvals.ProcessApprovalAddNewConfigTest1"></class>
+            <class name="com.bkt.smarti.testcases.approvals.ProcessApprovalListEditTest2"></class>
+            <class name="com.bkt.smarti.testcases.approvals.ProcessApprovalListDeleteTest3"></class>
+            <class name="com.bkt.smarti.testcases.approvals.ApproversRoleBasedAddNewConfigTest1"></class>
+            <class name="com.bkt.smarti.testcases.approvals.ApproversRoleBasedEditTest2"></class>
+            <class name="com.bkt.smarti.testcases.approvals.ApproversRoleBasedDeleteTest3"></class>
+            <class name="com.bkt.smarti.testcases.approvals.ApproversUserBasedAddNewConfigTest1"></class>
+            <class name="com.bkt.smarti.testcases.approvals.ApproversUserBasedEditTest2"></class>
+            <class name="com.bkt.smarti.testcases.approvals.ApproversUserBasedDeleteTest3"></class>
+        </classes>
+    </test>
+
+    <!--Public Payment Module-->
+    <test name="Public Payment">
+        <classes>
+            <class name="com.bkt.smarti.testcases.publicpayment.OneLiabilityTreasuryPayment"></class>
+            <class name="com.bkt.smarti.testcases.publicpayment.TwoLiabilitiesTreasuryPayment"></class>
+            <class name="com.bkt.smarti.testcases.publicpayment.TreasuryPaymentSendEmail"></class>
+            <class name="com.bkt.smarti.testcases.publicpayment.TreasuryPaymentOvdAcc"></class>
+            <class name="com.bkt.smarti.testcases.publicpayment.negativecases.TreasuryPaymentNoBalanceAcc"></class>
+        </classes>
+    </test>
+    <!--Executive Payment Module-->
+    <test name="Executive Payment">
+        <classes>
+            <class name="com.bkt.smarti.testcases.executivepayment.ExecutivePayment"></class>
+            <class name="com.bkt.smarti.testcases.executivepayment.ExecutivePaymentTwoAccounts"></class>
+            <class name="com.bkt.smarti.testcases.executivepayment.negativecases.ExecutivePaymentNoBalanceAccount"></class>
+        </classes>
+    </test>
+
+
+    <!--UniqueCode -->
+    <test name="UniqueCode">
+
+        <classes>
+            <class name="com.bkt.smarti.testcases.uniquecode.GenerateUniqueCodeForgetPass"></class>
+            <class name="com.bkt.smarti.testcases.uniquecode.GenerateUniqueCodeRegistration"></class>
+            <class name="com.bkt.smarti.testcases.uniquecode.negativetestcases.UniqueCodeUserCreditCardTest"></class>
+            <class name="com.bkt.smarti.testcases.uniquecode.negativetestcases.DuplicationOfGenerateUniqueCode"></class>
+        </classes>
+    </test>
+
+
+    <!--Treasury Module
+    <test name="Treasury">
+        <classes>
+            <class name="com.bkt.smarti.testcases.treasury.ReutersRateTest"></class>
+            <class name="com.bkt.smarti.testcases.treasury.BankAlbaniaRatesTest"></class>
+            <class name="com.bkt.smarti.testcases.treasury.RatesUploadHistoryTest"></class>
+            <class name="com.bkt.smarti.testcases.treasury.StandardRateTest"></class>
+            <class name="com.bkt.smarti.testcases.treasury.SpreadValuesOnCalculateTest"></class>
+            <class name="com.bkt.smarti.testcases.treasury.SpreadValuesOnUpdateTest"></class>
+        </classes>
+    </test>-->
+    <!--Traffic Fine Module-->
+    <test name="Traffic Fine">
+        <classes>
+            <class name="com.bkt.smarti.testcases.trafficfine.PayTrafficFineByMyPlateNOTest"></class>
+            <class name="com.bkt.smarti.testcases.trafficfine.PayTrafficFineByPlateNOTest"></class>
+            <class name="com.bkt.smarti.testcases.trafficfine.PayTrafficFineByFineNoTest"></class>
+            <class name="com.bkt.smarti.testcases.trafficfine.managenotifications.TrafficFineAddNotificationTest"></class>
+            <class name="com.bkt.smarti.testcases.trafficfine.managenotifications.TrafficFineDeleteNotificationTest"></class>
+
+        </classes>
+    </test>
+    <test name="Transfers Domestic">
+
+        <classes>
+
+
+            <class name="com.bkt.smarti.testcases.transfers.domestic.retail.TrnDomesticRetail"></class>
+            <class name="com.bkt.smarti.testcases.transfers.domestic.retail.TrnDomesticRetailOVD"></class>
+            <class name="com.bkt.smarti.testcases.transfers.domestic.business.TrnDomesticBusiness"></class>
+
+
+            <class name="com.bkt.smarti.testcases.transfers.domestic.business.TrnDomesticBusinessOVD"></class>
+
+
+        </classes>
+    </test>
+
+    <!--Login Test Cases-->
+    <test name="login ">
+
+        <classes>
+            <class name="com.bkt.smarti.testcases.login.negativetestcases.LoginWrongCredentialsTest"></class>
+
+        </classes>
+    </test>
+
+    <!--Pension-->
+    <test name="Pension">
+        <classes>
+            <class name="com.bkt.smarti.testcases.pension.ImportPensionerListTest"></class>
+            <class name="com.bkt.smarti.testcases.pension.PensionDeclarationTest"></class>
+            <class name="com.bkt.smarti.testcases.pension.PensionPaymentTest"></class>
+            <class name="com.bkt.smarti.testcases.pension.negativecases.NoFileSelectedCase"></class>
+
+        </classes>
+    </test>
+
+    <!--Pension Fund-->
+    <test name="Pension Fund">
+        <classes>
+            <class name="com.bkt.smarti.testcases.pensionfund.UploadCustomers"></class>
+        </classes>
+    </test>
+
+    <!--Cross Upload
+    <test name=" Treasury Cross Upload">
+        <classes>
+            <class name="com.bkt.smarti.testcases.treasury.CrossUploadTest"></class>
+        </classes>
+    </test>-->
+    <!--MREL Test Cases-->
+    <test name="MREL">
+
+
+        <classes>
+            <class name="com.bkt.smarti.testcases.mrel.retail.GenerateAdaptabilityTest"></class>
+            <class name="com.bkt.smarti.testcases.mrel.retail.GenerateCustodianInvestor"></class>
+            <class name="com.bkt.smarti.testcases.mrel.retail.GeneratePackageSignature"></class>
+            <class name="com.bkt.smarti.testcases.mrel.negativecases.NotAllowedAmount"></class>
+
+        </classes>
+    </test>
+
+</suite>

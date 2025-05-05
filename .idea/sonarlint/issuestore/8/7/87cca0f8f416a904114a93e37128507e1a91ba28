@@ -1,0 +1,18 @@
+
+z
+java:S1104"]Make driverThreadLocal a static final constant or non-public and provide accessors if needed.(ªŒ…8•ªªƒé2
+T
+java:S1444"7Make this "public static driverThreadLocal" field final(ªŒ…8•ªªƒé2
+j
+java:S2095""MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(º¿È©8Ÿªªƒé2
+X
+java:S2696!"6Make the enclosing method "static" or remove this set.(É¼ùÿÿÿÿ8£ªªƒé2
+L	java:S106&"+Replace this use of System.out by a logger.(¨ØÎûÿÿÿÿ8¤ªªƒé2
+G	java:S106("+Replace this use of System.out by a logger.(ıìç8¥ªªƒé2
+X
+java:S18741"6Remove this use of "implicitlyWait"; it is deprecated.(Âì¿ãıÿÿÿÿ8¦ªªƒé2
+T
+java:S18742"7Remove this use of "pageLoadTimeout"; it is deprecated.(ªÎì8¦ªªƒé2
+L	java:S106>"+Replace this use of System.out by a logger.(ÿÍ××øÿÿÿÿ8§ªªƒé2
+L	java:S106B"+Replace this use of System.out by a logger.(×ïôĞıÿÿÿÿ8¨ªªƒé2
+X	java:S125g"<This block of commented-out lines of code should be removed.(Æ½ˆû8°ªªƒé2

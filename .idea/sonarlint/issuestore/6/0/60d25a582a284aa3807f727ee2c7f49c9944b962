@@ -1,0 +1,43 @@
+
+b
+java:S1192,"GDefine a constant instead of duplicating this literal "Value " 3 times.(ãºõÛùÿÿÿÿ
+a
+java:S1192"FDefine a constant instead of duplicating this literal "tbody" 6 times.(Ï¨óÂøÿÿÿÿ
+p
+java:S1192,"UDefine a constant instead of duplicating this literal " not found in table " 3 times.(ãºõÛùÿÿÿÿ
+j
+java:S1192q"ODefine a constant instead of duplicating this literal "table tbody tr" 3 times.(ËŒ˜ýÿÿÿÿ
+s	java:S135>"YReduce the total number of break and continue statements in this loop to use at most one.(âáªúÿÿÿÿ
+B
+java:S1125+"'Remove the unnecessary boolean literal.(Šâ¼Ýùÿÿÿÿ
+E	java:S106A"+Replace this use of System.out by a logger.(ðÈ¥äÿÿÿÿÿ
+B
+java:S1125D"'Remove the unnecessary boolean literal.(Šâ¼Ýùÿÿÿÿ
+B
+java:S1125G"'Remove the unnecessary boolean literal.(îÔÊÿüÿÿÿÿ
+E	java:S106\"+Replace this use of System.out by a logger.(ðÈ¥äÿÿÿÿÿ
+B
+java:S1125_"'Remove the unnecessary boolean literal.(Šâ¼Ýùÿÿÿÿ
+B
+java:S1125b"'Remove the unnecessary boolean literal.(îÔÊÿüÿÿÿÿ
+B
+java:S1172n",Remove this unused method parameter "table".(üí»¶
+E	java:S106r"+Replace this use of System.out by a logger.(žñîËüÿÿÿÿ
+K
+java:S1172‘"/Remove this unused method parameter "radioBox".(ÔáˆÆúÿÿÿÿ
+U
+java:S1155“">Use isEmpty() to check whether the collection is empty or not.(¬«®²
+C
+java:S1125¼"'Remove the unnecessary boolean literal.(îÔÊÿüÿÿÿÿ
+@
+java:S1940Ó")Use the opposite operator ("!=") instead.(¶©ÎÜ
+3
+java:S1116Ó"Remove this empty statement.(¶©ÎÜ
+Z
+java:S1155ã">Use isEmpty() to check whether the collection is empty or not.(‹¼™¥þÿÿÿÿ
+@
+java:S1940æ")Use the opposite operator ("!=") instead.(¶©ÎÜ
+3
+java:S1116æ"Remove this empty statement.(¶©ÎÜ
+F
+java:S5960,"+Remove this assertion from production code.(ãºõÛùÿÿÿÿ
