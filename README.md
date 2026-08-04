@@ -1,4 +1,3 @@
-
 # This project has moved :truck:
 
 My portfolio now lives at **[github.com/julinda-suku](https://github.com/julinda-suku)**:
